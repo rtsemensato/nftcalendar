@@ -1,0 +1,14 @@
+.pageContainer {
+	width: 100vw;
+	height: 100vh;
+	border: 0;
+	padding: 0;
+	position: relative;
+	background-color: hsl(var(--color-background));
+	overflow: hidden;
+
+	@media print {
+		height: auto;
+		overflow-y: show;
+	}
+}

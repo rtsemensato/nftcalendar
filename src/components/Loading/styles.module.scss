@@ -1,0 +1,16 @@
+.loadingContainer {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: var(--zindex-loading);
+	top: 0;
+	left: 0;
+	background-color: #0006;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	> div {
+		position: relative;
+	}
+}

@@ -1,0 +1,148 @@
+.formContainer {
+	section {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-end;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+			gap: 0.2rem;
+
+			&[data-size="1"] {
+				flex: 1 12 4rem;
+				max-width: 6rem;
+			}
+
+			&[data-size="2"] {
+				flex: 2 11 9rem;
+				max-width: 13rem;
+			}
+
+			&[data-size="3"] {
+				flex: 3 10 14rem;
+				max-width: 20rem;
+			}
+
+			&[data-size="4"] {
+				flex: 4 9 19rem;
+				max-width: 33rem;
+			}
+
+			&[data-size="5"] {
+				flex: 5 8 24rem;
+				max-width: 34rem;
+			}
+
+			&[data-size="6"] {
+				flex: 6 7 29rem;
+				max-width: 41rem;
+			}
+
+			&[data-size="7"] {
+				flex: 7 6 34rem;
+				max-width: 48rem;
+			}
+
+			&[data-size="8"] {
+				flex: 8 5 39rem;
+				max-width: 55rem;
+			}
+
+			&[data-size="9"] {
+				flex: 9 4 44rem;
+				max-width: 62rem;
+			}
+
+			&[data-size="10"] {
+				flex: 10 3 49rem;
+				max-width: 69rem;
+			}
+
+			&[data-size="11"] {
+				flex: 11 2 54rem;
+				max-width: 76rem;
+			}
+
+			&[data-size="12"] {
+				flex: 4 1 59rem;
+				max-width: 83rem;
+			}
+
+			&[data-unlimited] {
+				max-width: none;
+			}
+		}
+	}
+
+	input,
+	select,
+	textarea {
+		text-transform: uppercase;
+		width: 100%;
+		padding: 0.375rem 0.75rem;
+		font-size: 1rem;
+		line-height: 1.5;
+		background-color: hsl(var(--color-surface));
+		border-radius: var(--border-radius);
+
+		&[data-alert="true"] {
+			border-color: hsl(var(--color-red));
+			background-clip: padding-box;
+			border-radius: var(--border-radius);
+
+			&:focus {
+				border-color: hsl(var(--color-red));
+				box-shadow: 0 0 0 1px hsl(var(--color-red));
+			}
+		}
+
+		&:disabled {
+			background-color: var(--color-surface-disabled);
+			cursor: not-allowed;
+		}
+	}
+
+	input,
+	select {
+		height: 2.3rem;
+	}
+
+	input[type="date"],
+	input[type="email"],
+	input[type="url"],
+	input::placeholder {
+		text-transform: none;
+	}
+
+	textarea {
+		cursor: auto;
+		&::-webkit-scrollbar {
+			width: 1rem;
+			border-radius: 0 var(--border-radius) var(--border-radius) 0;
+			cursor: default;
+		}
+
+		/* Track */
+		&::-webkit-scrollbar-track {
+			background: #eee;
+			border-radius: 0 var(--border-radius) var(--border-radius) 0;
+		}
+
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: #bbb;
+			border-radius: var(--border-radius);
+		}
+
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: #999;
+		}
+	}
+}

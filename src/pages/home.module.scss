@@ -1,0 +1,19 @@
+.homeContainer {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	padding: 1rem;
+	background-color: hsl(var(--color-primary-800));
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 2rem;
+	outline: 1rem solid hsl(var(--color-primary-800));
+
+	> a {
+		font-size: 1.5rem;
+		color: white;
+		text-decoration: none;
+	}
+}

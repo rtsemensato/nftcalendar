@@ -1,0 +1,52 @@
+.dialogBoxContainer {
+	position: fixed;
+	z-index: var(--zindex-modal);
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	background-color: var(--overlay-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	> .content {
+		padding: 2rem;
+		background-color: hsl(var(--color-surface));
+		border-radius: var(--border-radius);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+
+		> main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 1rem;
+
+			> strong {
+				font-size: 1.6rem;
+			}
+		}
+
+		> footer {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 2rem;
+
+			> button {
+				width: 8rem;
+				justify-content: center;
+
+				& + button {
+					background-color: hsl(var(--color-red));
+					border-color: hsl(var(--color-red));
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,98 @@
+button.button {
+	width: auto;
+	max-width: 10rem;
+	height: 3.5rem;
+	font-size: 1rem;
+	padding: 0.5rem 1rem;
+	background-color: hsl(var(--color-secondary-500));
+	color: var(--color-on-secondary);
+	border: 1px solid hsl(var(--color-secondary-500));
+	outline: none;
+	border-radius: var(--border-radius);
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+
+	transition: all 0.2s ease-in-out;
+
+	&.secondary {
+		background-color: hsl(var(--color-surface));
+		color: hsl(var(--color-secondary-500));
+		border: 1px solid hsl(var(--color-secondary-500));
+
+		&:hover {
+			background-color: hsla(var(--color-secondary-500), 0.3);
+		}
+	}
+
+	&.success {
+		background-color: hsl(var(--color-green));
+		border: 1px solid hsl(var(--color-green));
+
+		&:hover {
+			background-color: hsla(var(--color-green), 0.8);
+			border: 1px solid hsl(var(--color-green));
+		}
+	}
+
+	&.caution {
+		background-color: hsl(var(--color-attention-500));
+		border: 1px solid hsl(var(--color-attention-500));
+
+		&:hover {
+			background-color: hsla(var(--color-attention-500), 0.8);
+			border: 1px solid hsl(var(--color-attention-500));
+		}
+	}
+
+	&.danger {
+		background-color: hsl(var(--color-red));
+		border: 1px solid hsl(var(--color-red));
+
+		&:hover {
+			background-color: hsla(var(--color-red), 0.8);
+			border: 1px solid hsl(var(--color-red));
+		}
+	}
+
+	&[data-tip]::after {
+		content: attr(data-tip);
+		position: absolute;
+		bottom: calc(100% + 0.3rem);
+		left: 0;
+		padding: 0.25rem 0.5rem;
+		background-color: hsl(var(--color-surface));
+		color: var(--color-on-surface);
+		border: 1px solid hsl(var(--color-gray-500));
+		border-radius: var(--border-radius);
+		border-bottom-left-radius: 0;
+		font-size: 0.8rem;
+		white-space: nowrap;
+		transform: scale(0);
+		transform-origin: bottom left;
+		opacity: 0;
+		z-index: var(--zindex-tooltip);
+		pointer-events: none;
+
+		transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	}
+
+	&:hover {
+		background-color: hsla(var(--color-secondary-500), 0.8);
+		border-color: hsl(var(--color-secondary-500));
+		cursor: pointer;
+
+		&[data-tip]::after {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	> img,
+	svg {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+}

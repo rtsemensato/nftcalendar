@@ -4,10 +4,8 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 
 import { PageContainer } from "../components/PageContainer";
-import { PageHeader } from "../components/PageHeader";
 import { Loading } from "../components/Loading";
 
-import { PageHeaderContextProvider } from "../contexts/PageHeaderContext";
 import { LoginContextProvider } from "../contexts/LoginContext";
 
 import "../styles/reset.scss";
@@ -34,16 +32,13 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<LoginContextProvider>
-			<PageHeaderContextProvider>
-					<PageContainer>
-						<PageHeader />
-							{isLoading ? (
-								<Loading />
-							) : (
-									<Component {...pageProps} />
-							)}
-					</PageContainer>
-			</PageHeaderContextProvider>
+			<PageContainer>
+					{isLoading ? (
+						<Loading />
+					) : (
+							<Component {...pageProps} />
+					)}
+			</PageContainer>
 		</LoginContextProvider>
 	);
 }

@@ -1,0 +1,100 @@
+.loginContainer {
+	width: 100%;
+	height: 100%;
+	background-color: hsl(var(--color-primary-900));
+	outline: 1rem solid hsl(var(--color-primary-900));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	> form {
+		width: 25rem;
+		height: 35rem;
+		padding: 3rem;
+		background-color: hsl(var(--color-primary-800));
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		position: relative;
+		border-radius: var(border-radius);
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 2rem;
+
+			// > img {
+			// 	width: 15rem;
+			// 	position: absolute;
+			// 	top: 5rem;
+			// }
+
+			> .title {
+				font-size: 2rem;
+				color: white;
+			}
+
+			> div.inputContainer > input,
+			button {
+				width: 15rem;
+				height: 2.4rem;
+				border: none;
+			}
+
+			> .inputContainer {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				position: relative;
+
+				> label {
+					position: absolute;
+					top: 0.6rem;
+					left: 0.5rem;
+					color: var(--disabled-text);
+					font-size: 1rem;
+					pointer-events: none;
+					transition: all 0.2s ease-in-out;
+				}
+
+				> input {
+					font-size: 1rem;
+
+					&.password {
+						padding-right: 2rem;
+					}
+
+					&:focus ~ label,
+					&:valid ~ label {
+						top: -1.5rem;
+						left: 0;
+						color: var(--white);
+						font-size: 0.875rem;
+					}
+				}
+
+				> svg {
+					width: 1.1rem;
+					height: 1.1rem;
+					position: absolute;
+					top: 0.6rem;
+					right: 0.5rem;
+					cursor: pointer;
+					color: hsl(var(--color-primary-800));
+				}
+			}
+
+			> button {
+				background-image: var(--color-logo-gradient);
+				color: white;
+				font-size: 1.2rem;
+				cursor: pointer;
+			}
+		}
+	}
+}

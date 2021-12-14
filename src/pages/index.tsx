@@ -10,7 +10,7 @@ export default function Home() {
 	const router = useRouter();
 
 	useEffect(() => {
-		if (!isUserLoggedIn) {
+		if (!isUserLoggedIn && !localStorage.getItem("@nftcalendar/userLogin")) {
 			router.push("/login");
 		}
 	}, []);

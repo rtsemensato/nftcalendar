@@ -18,7 +18,9 @@ export function LoginContextProvider({ children }: LoginContextProviderProps) {
 	const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
 	useEffect(() => {
-		const login = localStorage.getItem("@apes/userLogin") ? localStorage.getItem("@apes/userLogin") : "";
+		const login = localStorage.getItem("@nftcalendar/userLogin")
+			? localStorage.getItem("@nftcalendar/userLogin")
+			: "";
 
 		setUserLogin(login);
 	}, []);

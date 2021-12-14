@@ -35,12 +35,10 @@ export default function Login() {
 
 		const users = ["ricardo", "samuel"];
 
-		console.log(user);
-
 		if (users.includes(user.login, 0) && user.password === "bundinha123") {
 			localStorage.setItem("@nftcalendar/userLogin", user.login);
 			login(user.login);
-			router.push("/home");
+			router.push("/");
 		} else {
 			cogoToast.error("Usuário ou senha inválidos");
 		}
